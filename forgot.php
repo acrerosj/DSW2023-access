@@ -23,9 +23,11 @@ if(isset($_POST['name'])) {
       $message = "<h1>Recordar Contraseña</h1><h2>Hola $name</h2><p><a href=\"http://localhost/DSW2023-access/reset-password.php?username=$name&number_validate=$number_validate\">pincha aquí para restablecer tu contraseña</a>";
       sendMail($email,"Reestablecer contraseña",$message);
       header('Location: login.php');
+      $stmt = null;
     } else {
       $stmt = null;
     }
+    $bd = null;
   }
 }
 ?>

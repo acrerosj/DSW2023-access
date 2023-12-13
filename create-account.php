@@ -30,6 +30,9 @@ if(isset($_POST['name'],$_POST['password'],$_POST['email'])) {
     $message = "<h1>Registro de usuarios</h1><h2>Hola $name</h2><p><a href=\"http://localhost/DSW2023-access/validate.php?username=$name&number_validate=$number_validate\">pincha aquí para validarte</a>";
     sendMail($email,"Validación de usuario",$message);
     header('Location: login.php');
+    $stmt = null;
+    $bd = null;
+    exit;
   }
   
 }
@@ -45,7 +48,7 @@ if(isset($_POST['name'],$_POST['password'],$_POST['email'])) {
   <h1>Crea una cuenta de usuario</h1>
 <?php
   if (isset($error_msg)) {
-    echo "<div>$error_msg</div>";
+    echo "<ul>$error_msg</ul>";
   }
 ?>  
   <form action="create-account.php" method="POST">

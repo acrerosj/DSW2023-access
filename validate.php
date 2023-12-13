@@ -5,7 +5,7 @@
     require_once 'connection.php';
     $stmt = $bd->prepare('UPDATE users SET validate=true WHERE name=:name AND number_validate=:number_validate');
     $stmt->execute([':name' => $username, ':number_validate' => $number_validate]);
-    header('Location: index.php');
     $stmt = null;
     $bd = null;
+    header('Location: login.php');
   } 

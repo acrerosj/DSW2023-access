@@ -10,6 +10,9 @@
       $_SESSION['username'] = $user->name;
       $_SESSION['mail'] = $user->mail;
       header('Location: index.php');
+      $stmt = null;
+      $bd = null;  
+      exit;
     } else {
       $error_msg = "Usuario o contraseña incorrectos";
     }
